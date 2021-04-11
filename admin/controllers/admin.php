@@ -9,7 +9,7 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
     if($action == NULL){
-        $action = 'login';
+        $action = 'show_login';
     }
 }
 
@@ -46,7 +46,7 @@ switch($action){
         $confirm_password = filter_input(INPUT_POST, 'confirm_password');
         include('../util/valid_register.php');
         $errors = valid_registration($username, $password, $confirm_password);
-        if(!empty($errors)){
+        if($errors){
             include('../view/register.php');
         } else {
             add_admin($username, $password);
