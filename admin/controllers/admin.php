@@ -1,8 +1,4 @@
 <?php
-if (!isset($_SESSION['is_valid_admin'])){
-    $action = 'login';
-}
-
 switch($action){
     case 'login':
         if (is_valid_admin_login($username, $password)){
@@ -23,9 +19,6 @@ switch($action){
         include('view/login.php');
         break;
     case 'register':
-        $username = filter_input(INPUT_POST, 'username');
-        $password = filter_input(INPUT_POST, 'password');
-        $confirm_password = filter_input(INPUT_POST, 'confirm_password');
         include('util/valid_register.php');
         $errors = valid_registration($username, $password, $confirm_password);
         if(!empty($errors)){
