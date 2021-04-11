@@ -1,8 +1,19 @@
-<?php
+<?php if($login_message){ ?>
+<p><?= $login_message ?></p>
+<?php } ?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<form action="." method="post">
+    <input type="hidden" name="action" value="login">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" required>
+        <br>
+        <label>Password:</label>
+        <input type="text" name="password" required>
+        <br>
+        <input type="submit" value="Login" class="button blue">
+        <br>
+    </div>
+</form>
+
 

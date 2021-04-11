@@ -21,6 +21,7 @@
     <?php if ($action !== 'list_classes') { ?>
     <p><a href=".?action=list_classes">View/Edit Vehicle Classes</a></p>
     <?php } ?>
+    <p><a href=".?action=show_register">Register A New Admin</a></p>
 </div>
 
 <footer>

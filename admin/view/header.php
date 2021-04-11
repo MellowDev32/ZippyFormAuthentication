@@ -1,3 +1,4 @@
+<?php include('../util/valid_admin.php'); ?>
 <!DOCTYPE html>
 <html>
 
