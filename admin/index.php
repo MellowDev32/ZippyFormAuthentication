@@ -6,6 +6,8 @@
     require('../model/class_db.php');
     require('../model/make_db.php');
     require('../model/admin_db.php');
+    
+    
 
     // Get required data from Model
     $makes = get_makes();
