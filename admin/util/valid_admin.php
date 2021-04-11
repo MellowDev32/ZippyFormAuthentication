@@ -1,5 +1,5 @@
 <?php
 if(!isset($_SESSION['is_valid_admin'])){
-    header('Location: .?action=login');
+    header("Location: .?action=login");
 }
 
