@@ -25,7 +25,7 @@ switch($action){
         $password = filter_input(INPUT_POST, 'password');
         $confirm_password = filter_input(INPUT_POST, 'confirm_password');
         include('util/valid_register.php');
-        $errors = valid_registration($username, $password, $confirm_password);
+        $errors = array();
         if(!empty($errors)){
             include('view/register.php');
         } else {
