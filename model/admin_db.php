@@ -27,7 +27,7 @@ function is_valid_admin_login($username, $password){
     return password_verify($password, $hash);
 }
 
-function add_admin($username){
+function username_exists($username){
     global $db;
     $query = 'SELECT COUNT(*) FROM administrators WHERE username = :username';
     $statement = $db->prepare($query);

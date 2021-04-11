@@ -1,6 +1,6 @@
-<?php include 'view/header.php'; ?>
-<?php if(!empty($errors)){ 
-    foreach ($error as $errors) : ?>
+<?php include 'view/header.php';
+     if(!empty($errors)){ 
+        foreach ($error as $errors) : ?>
 <p><?= $error ?></p>
 <?php endforeach;
     } ?>
