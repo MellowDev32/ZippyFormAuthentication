@@ -60,9 +60,6 @@
         }
     }
 
-    if (!isset($_SESSION['is_valid_admin'])){
-        $action = 'login';
-    }
     // Router - take action based on $action parameter received
     if ($action === 'add_make' ||
         $action === 'delete_make' ||
