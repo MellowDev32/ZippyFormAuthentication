@@ -22,7 +22,7 @@ function is_valid_admin_login($username, $password){
     if(!empty($row['password'])){
         $hash = $row['password'];
     } else {
-        $hash = '';
+        $hash = null;
     }
     return password_verify($password, $hash);
 }

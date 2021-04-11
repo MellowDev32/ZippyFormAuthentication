@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['is_valid_admin'])){
-    $action = 'show_login';
+    $action = 'login';
 }
 
 switch($action){
