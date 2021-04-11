@@ -28,7 +28,7 @@ switch($action){
             header("Location: .?action=list_vehicles");
         } else {
             $login_message = 'You must login to view this page.';
-            include('../view/login.php');
+            include('view/login.php');
         }
         break;
     case 'show_login':
@@ -38,7 +38,7 @@ switch($action){
         $_SESSION = array();
         session_destroy();
         $login_message = 'You have been logged out.';
-        include('../view/login.php');
+        include('view/login.php');
         break;
     case 'register':
         $username = filter_input(INPUT_POST, 'username');
@@ -47,7 +47,7 @@ switch($action){
         include('../util/valid_register.php');
         $errors = valid_registration($username, $password, $confirm_password);
         if($errors){
-            include('../view/register.php');
+            include('view/register.php');
         } else {
             add_admin($username, $password);
             $_SESSION['is_valid_admin'] = true;
@@ -55,6 +55,6 @@ switch($action){
         }
         break;
     case 'show_register':
-        include('../view/register.php');
+        include('view/register.php');
         break;
 }
