@@ -33,9 +33,9 @@
     if (!$password) {
         $password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING);
     }
-    $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_VALIDATE_BOOLEAN);
+    $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
     if (!$confirm_password) {
-        $confirm_password = filter_input(INPUT_GET, 'confirm_password', FILTER_VALIDATE_BOOLEAN);
+        $confirm_password = filter_input(INPUT_GET, 'confirm_password', FILTER_SANITIZE_STRING);
     }
     
     $sort = filter_input(INPUT_GET, 'sort', FILTER_SANITIZE_STRING);
@@ -75,3 +75,9 @@
         $action === 'add_vehicle' ||
         $action === 'delete_vehicle' ||
         $action === 'list_vehicles') include('controllers/vehicles.php');
+
+    if ($action === 'login' || 
+        $action === 'show_login' ||
+        $action === 'register' ||
+        $action === 'show_register' ||
+        $action === 'logout') include('controllers/admin.php');
