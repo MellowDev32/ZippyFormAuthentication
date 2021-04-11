@@ -11,9 +11,7 @@ if ($action == NULL){
 }
 
 // if user isn't logged in, force them to log in
-if (!isset($_SESSION['is_valid_admin'])){
-    $action = 'login';
-}
+
 
 // action cases
 switch($action){
