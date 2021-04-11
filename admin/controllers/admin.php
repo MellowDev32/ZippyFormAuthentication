@@ -5,8 +5,6 @@ if (!isset($_SESSION['is_valid_admin'])){
 
 switch($action){
     case 'login':
-        $username = filter_input(INPUT_POST, 'username');
-        $password = filter_input(INPUT_POST, 'password');
         if (is_valid_admin_login($username, $password)){
             $_SESSION['is_valid_admin'] = true;
             header("Location: .?action=list_vehicles");
