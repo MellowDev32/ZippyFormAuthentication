@@ -1,19 +1,4 @@
 <?php
-//start session
-session_start();
-require_once('../model/database.php');
-require_once('../model/admin_db.php');
-
-// Get the action
-$action = filter_input(INPUT_POST, 'action');
-if ($action == NULL){
-    $action = filter_input(INPUT_GET, 'action');
-}
-
-// if user isn't logged in, force them to log in
-
-
-// action cases
 switch($action){
     case 'login':
         $username = filter_input(INPUT_POST, 'username');
@@ -27,7 +12,7 @@ switch($action){
         }
         break;
     case 'show_login':
-        include('../view/login.php');
+        include('view/login.php');
         break;
     case 'logout':
         $_SESSION = array();
@@ -39,9 +24,9 @@ switch($action){
         $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
         $confirm_password = filter_input(INPUT_POST, 'confirm_password');
-        include('../util/valid_register.php');
+        include('util/valid_register.php');
         $errors = valid_registration($username, $password, $confirm_password);
-        if($errors){
+        if(!empty($errors)){
             include('view/register.php');
         } else {
             add_admin($username, $password);
