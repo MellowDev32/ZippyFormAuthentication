@@ -31,5 +31,5 @@ function username_exists($username){
     $statement->execute();
     $count = $statement->fetch();
     $statement->closeCursor();
-    return ($count > 0) ? true : false;
+    return ($count == 1) ? true : false;
 }
