@@ -23,11 +23,11 @@
             <input type="hidden" name="action" value="login">
             <div class="mb-3">
                 <label class="form-label">Username:</label>
-                <input type="text" name="username" class="form-text" required>
+                <input type="text" name="username" required>
             </div>
             <div class="mb-3">
                 <label>Password:</label>
-                <input type="password" name="password" class="form-control" required>
+                <input type="password" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
