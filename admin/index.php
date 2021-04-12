@@ -28,17 +28,11 @@
         $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
     }
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    if (!$username) {
-        $username = filter_input(INPUT_GET, 'username', FILTER_SANITIZE_STRING);
-    }
+    
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    if (!$password) {
-        $password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING);
-    }
+    
     $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
-    if (!$confirm_password) {
-        $confirm_password = filter_input(INPUT_GET, 'confirm_password', FILTER_SANITIZE_STRING);
-    }
+    
     
     $sort = filter_input(INPUT_GET, 'sort', FILTER_SANITIZE_STRING);
     if (!$sort) $sort = 'price';
