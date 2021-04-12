@@ -17,9 +17,9 @@ function is_valid_admin_login($username, $password){
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $username);
     $statement->execute();
-    $row = $statement->fetchColumn();
+    $row = $statement->fetch();
     $statement->closeCursor();
-    $hash = (!empty($row['password'])) ? $row['password'] : NULL; 
+    $hash = $row['password'];
     return password_verify($password, $hash);
 }
 
